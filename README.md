@@ -8,5 +8,6 @@ MySpaceShooter
     Unity 2018.4.14f1 (64-bit)
 ### 脚本语言
     C#
-### 平台 Windows10 1909
+### 平台
+    Windows10 1909
 
