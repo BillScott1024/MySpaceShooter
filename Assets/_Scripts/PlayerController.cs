@@ -13,6 +13,13 @@ public class PlayerController : MonoBehaviour
     public float tilt = 4.0f;
 
     public Boundary boundary;
+
+    public float fireRate = 0.5f;
+    public GameObject shot;
+    public Transform shotSpawn;
+    private float nextFire = 0.0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +29,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                
+        }
     }
 
     private void FixedUpdate()
